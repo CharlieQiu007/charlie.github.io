@@ -6,11 +6,80 @@
 		<generator>Hugo -- gohugo.io</generator>
 		<language>zh_CN</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-		<lastBuildDate>Sat, 29 Sep 2018 11:36:33 +0800</lastBuildDate>
+		<lastBuildDate>Sun, 22 Dec 2019 10:36:45 +0800</lastBuildDate>
 		<atom:link href="https://charlieqiu007.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
 		
 		<item>
-			<title>Typography</title>
+			<title>使用 Hugo 和 GitHub 搭建博客</title>
+			<link>https://charlieqiu007.github.io/posts/%E4%BD%BF%E7%94%A8-hugo-%E5%92%8C-github-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</link>
+			<pubDate>Sun, 22 Dec 2019 10:36:45 +0800</pubDate>
+			
+			<guid>https://charlieqiu007.github.io/posts/%E4%BD%BF%E7%94%A8-hugo-%E5%92%8C-github-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</guid>
+			<description>Hugo 1. 下载 hugo https://github.com/gohugoio/hugo/releases
+2. 安装 a. 解压安装包,放在指定的位置 b. 设置环境变量 c. 生成本地网站 $ hugo new site test.com 会有如下提示  Congratulations! Your new Hugo site is created in C:\Users\[用户名]\test.com.
+ 进入 C:\Users\[用户名]\test.com 主题 1. 下载 https://www.gohugo.org/theme/
+2. 使用 a. 将主题文件夹重新命名，把主题文档 hugo-strata-theme-master 命名为 hugo-strata-theme；b. 将 hugo-strata-theme 全部复制到 C:\Users\[用户名]\test.com\themes 目录下c. 将下载好的主题解压，把其中 exampleSite 中的文档全部复制到 C:\Users\[用户名]\test.com 下，替换 C:\Users\[用户名]\test.com 下的文件 本地运行 1. 打开命令行 进入 C:\Users\[用户名]\test.com $ hugo server 提示  Web Server is available at http://localhost:10946/ (bind address 127.</description>
+			<content type="html"><![CDATA[<p><img src="/img/MountTaranaki_ZH-CN1962085466_1920x1080.jpg" alt="image"></p>
+<h2 id="hugo">Hugo</h2>
+<h4 id="1-下载-hugo">1. 下载 hugo</h4>
+<p><code>https://github.com/gohugoio/hugo/releases</code></p>
+<h4 id="2-安装">2. 安装</h4>
+<pre><code>a. 解压安装包,放在指定的位置
+</code></pre>
+<p><img src="/img/20201222092726.png" alt="image"></p>
+<pre><code>b. 设置环境变量
+</code></pre>
+<p><img src="/img/20201222093033.png" alt="image"></p>
+<pre><code>c. 生成本地网站
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ hugo new site test.com
+</code></pre></div><pre><code>会有如下提示
+</code></pre>
+<blockquote>
+<p><code>Congratulations! Your new Hugo site is created in C:\Users\[用户名]\test.com.</code></p>
+</blockquote>
+<pre><code>进入 C:\Users\[用户名]\test.com
+</code></pre>
+<h2 id="主题">主题</h2>
+<h4 id="1-下载">1. 下载</h4>
+<p><code>https://www.gohugo.org/theme/</code></p>
+<h4 id="2-使用">2. 使用</h4>
+<pre><code>a. 将主题文件夹重新命名，把主题文档 hugo-strata-theme-master 命名为 hugo-strata-theme；
+b. 将 hugo-strata-theme 全部复制到 C:\Users\[用户名]\test.com\themes 目录下
+c. 将下载好的主题解压，把其中 exampleSite 中的文档全部复制到 C:\Users\[用户名]\test.com 下，替换 C:\Users\[用户名]\test.com 下的文件
+</code></pre>
+<h2 id="本地运行">本地运行</h2>
+<h4 id="1-打开命令行">1. 打开命令行</h4>
+<pre><code>进入 C:\Users\[用户名]\test.com
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ hugo server
+</code></pre></div><pre><code>提示
+</code></pre>
+<blockquote>
+<p><code>Web Server is available at http://localhost:10946/ (bind address 127.0.0.1)</code></p>
+</blockquote>
+<pre><code>浏览器访问 http://localhost:10946/ 发现本地运行成功了
+</code></pre>
+<h2 id="部署">部署</h2>
+<h4 id="1-github-pages">1. Github Pages</h4>
+<pre><code>部署在 GitHub Pages 上，首先在GitHub上创建一个Repository，命名为：coderzh.github.io （coderzh替换为你的github用户名）。
+</code></pre>
+<h4 id="2-生成-public">2. 生成 public</h4>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ hugo --baseUrl<span class="o">=</span><span class="s2">&#34;http://coderzh.github.io/&#34;</span>
+</code></pre></div><h4 id="3-上传网站">3. 上传网站</h4>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ <span class="nb">cd</span> public
+$ git init
+$ git remote add origin https://github.com/coderzh/coderzh.github.io.git
+$ git add -A
+$ git commit -m <span class="s2">&#34;first commit&#34;</span>
+$ git push -u origin master
+</code></pre></div><h2 id="创建文章">创建文章</h2>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ hugo new 如何到达人生巅峰.md
+</code></pre></div>]]></content>
+		</item>
+		
+		<item>
+			<title>Markdown教程</title>
 			<link>https://charlieqiu007.github.io/posts/typography/</link>
 			<pubDate>Sat, 29 Sep 2018 11:36:33 +0800</pubDate>
 			
@@ -94,73 +163,6 @@
 </ol>
 </section>
 ]]></content>
-		</item>
-		
-		<item>
-			<title>使用 Hugo 和 GitHub 搭建博客</title>
-			<link>https://charlieqiu007.github.io/posts/%E4%BD%BF%E7%94%A8-hugo-%E5%92%8C-github-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</link>
-			<pubDate>Sat, 29 Sep 2018 11:36:33 +0800</pubDate>
-			
-			<guid>https://charlieqiu007.github.io/posts/%E4%BD%BF%E7%94%A8-hugo-%E5%92%8C-github-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</guid>
-			<description>Hugo 1. 下载 hugo https://github.com/gohugoio/hugo/releases
-2. 安装 a. 解压安装包,放在指定的位置 b. 设置环境变量 c. 生成本地网站 $ hugo new site test.com 会有如下提示  Congratulations! Your new Hugo site is created in C:\Users\[用户名]\test.com.
- 进入 C:\Users\[用户名]\test.com 主题 1. 下载 https://www.gohugo.org/theme/
-2. 使用 a. 将主题文件夹重新命名，把主题文档 hugo-strata-theme-master 命名为 hugo-strata-theme；b. 将 hugo-strata-theme 全部复制到 C:\Users\[用户名]\test.com\themes 目录下c. 将下载好的主题解压，把其中 exampleSite 中的文档全部复制到 C:\Users\[用户名]\test.com 下，替换 C:\Users\[用户名]\test.com 下的文件 本地运行 1. 打开命令行 进入 C:\Users\[用户名]\test.com $ hugo server 提示  Web Server is available at http://localhost:10946/ (bind address 127.</description>
-			<content type="html"><![CDATA[<p><img src="/img/MountTaranaki_ZH-CN1962085466_1920x1080.jpg" alt="image"></p>
-<h2 id="hugo">Hugo</h2>
-<h4 id="1-下载-hugo">1. 下载 hugo</h4>
-<p><code>https://github.com/gohugoio/hugo/releases</code></p>
-<h4 id="2-安装">2. 安装</h4>
-<pre><code>a. 解压安装包,放在指定的位置
-</code></pre>
-<p><img src="/img/20201222092726.png" alt="image"></p>
-<pre><code>b. 设置环境变量
-</code></pre>
-<p><img src="/img/20201222093033.png" alt="image"></p>
-<pre><code>c. 生成本地网站
-</code></pre>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ hugo new site test.com
-</code></pre></div><pre><code>会有如下提示
-</code></pre>
-<blockquote>
-<p><code>Congratulations! Your new Hugo site is created in C:\Users\[用户名]\test.com.</code></p>
-</blockquote>
-<pre><code>进入 C:\Users\[用户名]\test.com
-</code></pre>
-<h2 id="主题">主题</h2>
-<h4 id="1-下载">1. 下载</h4>
-<p><code>https://www.gohugo.org/theme/</code></p>
-<h4 id="2-使用">2. 使用</h4>
-<pre><code>a. 将主题文件夹重新命名，把主题文档 hugo-strata-theme-master 命名为 hugo-strata-theme；
-b. 将 hugo-strata-theme 全部复制到 C:\Users\[用户名]\test.com\themes 目录下
-c. 将下载好的主题解压，把其中 exampleSite 中的文档全部复制到 C:\Users\[用户名]\test.com 下，替换 C:\Users\[用户名]\test.com 下的文件
-</code></pre>
-<h2 id="本地运行">本地运行</h2>
-<h4 id="1-打开命令行">1. 打开命令行</h4>
-<pre><code>进入 C:\Users\[用户名]\test.com
-</code></pre>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ hugo server
-</code></pre></div><pre><code>提示
-</code></pre>
-<blockquote>
-<p><code>Web Server is available at http://localhost:10946/ (bind address 127.0.0.1)</code></p>
-</blockquote>
-<pre><code>浏览器访问 http://localhost:10946/ 发现本地运行成功了
-</code></pre>
-<h2 id="部署">部署</h2>
-<h4 id="1-github-pages">1. Github Pages</h4>
-<pre><code>部署在 GitHub Pages 上，首先在GitHub上创建一个Repository，命名为：coderzh.github.io （coderzh替换为你的github用户名）。
-</code></pre>
-<h4 id="2-生成-public">2. 生成 public</h4>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ hugo --baseUrl<span class="o">=</span><span class="s2">&#34;http://coderzh.github.io/&#34;</span>
-</code></pre></div><h4 id="3-上传网站">3. 上传网站</h4>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ <span class="nb">cd</span> public
-$ git init
-$ git remote add origin https://github.com/coderzh/coderzh.github.io.git
-$ git add -A
-$ git commit -m <span class="s2">&#34;first commit&#34;</span>
-$ git push -u origin master
-</code></pre></div>]]></content>
 		</item>
 		
 	</channel>
